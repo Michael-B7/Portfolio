@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Oxygen&display=swap');
+
+:root{
+    --bg-color: #F4B71F;
+    --main-text-color: #FFFFFF;
+    --box-color: #252525;
+    --sec-text-color: #252525;
+    --main-font: 'IBM Plex Sans', sans-serif;
+    --sec-font: 'Oxygen', sans-serif;
+}
+
 *{
     box-sizing: border-box;
 }
@@ -6,5 +17,45 @@ body{
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--bg-color);
 }
 
+nav{
+    background-color: var(--box-color);
+    top: 0;
+    position: sticky;
+    height: 100vh;
+}
+
+nav ul{
+    list-style: none;
+    padding: 20px;
+}
+
+nav li{
+    /* display: inline-block; */
+    position: relative;
+    margin: 100% 0 100% 0;
+}
+
+nav li:not(.mail, .linkd){
+    transform: rotate(-90deg);
+}
+
+.mail, .linkd{
+    margin-left: 20px;
+}
+
+.submenu{
+    display: none;
+    position: absolute;
+}
+
+nav a{
+    color: var(--main-text-color);
+    text-decoration: none;
+    position: relative;
+    font-family: var(--main-font);
+    transform-origin: left center;
+    white-space: nowrap;
+}
