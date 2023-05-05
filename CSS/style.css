@@ -1,3 +1,5 @@
+/*general setup*/
+
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Oxygen&display=swap');
 
 :root{
@@ -23,27 +25,40 @@ body{
 nav{
     background-color: var(--box-color);
     top: 0;
-    position: sticky;
+    position: fixed;
     height: 100vh;
+    width: 5vw;
 }
 
 nav ul{
     list-style: none;
     padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 nav li{
     /* display: inline-block; */
     position: relative;
-    margin: 100% 0 100% 0;
+    margin: 50px 0;
+    height: fit-content;
+    width: 100%;
 }
 
 nav li:not(.mail, .linkd){
+    display: flex;
+    justify-content: center;
     transform: rotate(-90deg);
 }
 
 .mail, .linkd{
-    margin-left: 20px;
+    margin-left: 10px;
+}
+
+.mail a, .linkd a{
+    font-size: larger;
 }
 
 .submenu{
@@ -58,4 +73,47 @@ nav a{
     font-family: var(--main-font);
     transform-origin: left center;
     white-space: nowrap;
+    font-size: large;
 }
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+header{
+    font-size: xx-large;
+    font-family: var(--sec-font);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin: 15vh 0 30vh 0;
+}
+
+header *{
+    text-align: center;
+}
+
+.title :nth-child(2){
+    color: var(--main-text-color);
+    background-color: var(--box-color);
+    padding: 0 50px;
+}
+
+.title h1{
+    margin: 0;
+    font-size: 100px;
+}
+
+.subtitle h2{
+    margin: 15px 0;
+    font-size: 60px;
+}
+
+article{
+    margin: 0px 50px 0px calc(5vw + 50px);
+}
+
+/*home page*/
+
