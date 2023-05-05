@@ -4,11 +4,17 @@
 
 :root{
     --bg-color: #F4B71F;
+    --dark-bg: #e0a100;
     --main-text-color: #FFFFFF;
     --box-color: #252525;
     --sec-text-color: #252525;
     --main-font: 'IBM Plex Sans', sans-serif;
     --sec-font: 'Oxygen', sans-serif;
+    --h1-size: 100px;
+    --h2-size: 60px;
+    --h3-size: 36px;
+    --h4-size: 28px;
+    --p-size: 24px;
 }
 
 *{
@@ -77,7 +83,8 @@ nav a{
 }
 
 nav a:hover{
-    text-decoration: underline;
+    animation-name: bounce;
+    animation-duration: .2s;
 }
 
 header{
@@ -101,19 +108,82 @@ header *{
     padding: 0 50px;
 }
 
-.title h1{
+h1{
     margin: 0;
-    font-size: 100px;
+    font-size: var(--h1-size);
 }
 
-.subtitle h2{
+h2{
     margin: 15px 0;
-    font-size: 60px;
+    font-size: var(--h2-size);
 }
 
 article{
     margin: 0px 50px 0px calc(5vw + 50px);
 }
 
+@keyframes bounce{
+    0% {font-size: large;}
+    50% {font-size: larger;}
+    100% {font-size: large;}
+}
+
+section{
+    background-color: var(--box-color);
+    color: var(--main-text-color);
+    padding: 15px;
+    border-radius: 2px;
+    margin: 10px 0px;
+    font-family: var(--main-font);
+}
+
+h3{
+    font-size: var(--h3-size);
+}
+
+h4{
+    font-size: var(--h4-size);
+}
+
+p{
+    font-size: var(--p-size);
+}
+
 /*home page*/
 
+.tools{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tools h3{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.tools div{
+    color: var(--sec-text-color);
+    width: 30%;
+    background-color: var(--bg-color);
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.projects div{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 20px;
+}
+
+.projects h3, .projects p{
+    width: 49%;
+}
+
+.projects img{
+    width: 49%;
+    height: 100%;
+}
