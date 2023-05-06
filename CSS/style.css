@@ -82,9 +82,9 @@ nav a{
     font-size: large;
 }
 
-nav a:hover{
+nav li:not(.mail, .linkd) a:hover{
     animation-name: bounce;
-    animation-duration: .2s;
+    animation-duration: .5s;
 }
 
 header{
@@ -123,9 +123,8 @@ article{
 }
 
 @keyframes bounce{
-    0% {font-size: large;}
-    50% {font-size: larger;}
-    100% {font-size: large;}
+    0%, 100%{font-size: large;}
+    50%{font-size: larger;}
 }
 
 section{
