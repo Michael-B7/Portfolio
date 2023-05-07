@@ -53,7 +53,7 @@ nav li{
     width: 100%;
 }
 
-nav li:not(.mail, .linkd){
+nav > ul > li:not(.mail, .linkd){
     display: flex;
     justify-content: center;
     transform: rotate(-90deg);
@@ -70,7 +70,21 @@ nav li:not(.mail, .linkd){
 .submenu{
     display: none;
     position: absolute;
+    background: var(--box-color);
+    height: fit-content;
+    margin: 60px 0 0 0;
+    transform: rotate(90deg);
+    padding: 30px;
 }
+
+.submenu li{
+    margin: 0;
+}
+
+.submenu li:nth-child(2){
+    margin: 15px 0;
+}
+
 
 nav a{
     color: var(--main-text-color);
@@ -148,6 +162,47 @@ p{
     font-size: var(--p-size);
 }
 
+img{
+    max-width: 100%;
+}
+
+a{
+    color: var(--main-text-color);
+}
+
+.no-bg{
+    background-color: rgba(0,0,0,0);
+}
+
+.no-bg *{
+    color: var(--sec-text-color);
+}
+
+@keyframes slide {
+    0%{top:-100px;}
+    100%{top:0px;}
+}
+
+@keyframes unslide {
+    100%{top:-100px;}
+    0%{
+        top:0px;
+        display: none;
+    }
+}
+
+.unslider{
+    animation-name: unslide;
+    animation-duration: .5s;
+    /* display: none; */
+}
+
+.slider{
+    display: block;
+    animation-name: slide;
+    animation-duration: .5s;
+}
+
 /*home page*/
 
 .tools{
@@ -171,18 +226,83 @@ p{
     border-radius: 10px;
 }
 
-.projects div{
+.projects > div{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding: 10px;
     margin: 20px;
 }
 
-.projects h3, .projects p{
+.right{
     width: 49%;
+    margin: 0;
+}
+
+.right h4{
+    margin: 0;
 }
 
 .projects img{
     width: 49%;
     height: 100%;
 }
+
+.tools div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#vscode img{
+    width: 25%;
+}
+
+#figma img, #github img, #photoshop img, #netlify img, #pexels img{
+    width: 50%;
+}
+
+/*about page*/
+
+.awards, .hobbies, .plan{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*resume page*/
+
+.resume > ul, .resume > ul > li > ul{
+    list-style: none;
+}
+
+.top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.top p{
+    width: 50%;
+}
+
+.top :nth-child(2){
+    text-align: right;
+}
+
+/*contact page*/
+
+.links{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.links a{
+    border: #000 solid 5px;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: var(--main-font);
+}
+
+/*main portfolio page*/
+
