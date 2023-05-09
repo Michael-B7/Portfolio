@@ -1,7 +1,7 @@
 class PreviewModal{
     constructor(link){
         let navWidth = document.getElementsByTagName("nav")[0];
-        console.log(navWidth.)
+        console.log(navWidth)
         this.link = link
         this.html = 
         `<div class="preview-modal" style="position:fixed; z-index:100; width:calc(100vw-${navWidth}); height:90%;">
