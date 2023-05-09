@@ -305,3 +305,29 @@ a{
 
 /*main portfolio page*/
 
+
+
+/*personal portfolio page*/
+
+#carousel-container {
+    /* width: 25vw; Change this to the desired width of your carousel */
+    overflow: hidden;
+}
+  
+#image-container {
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.5s ease-out; /* Add a smooth transition effect when moving the images */
+}
+  
+#image-container img {
+    width: 49%;
+}
+
+#image1{margin-right: 20px; margin-left: 5px;}
+
+#image2{margin-right: 20px;}
+
+#image3{margin-right: 20px;}
+
+#image4{margin-right: 20px;} 
