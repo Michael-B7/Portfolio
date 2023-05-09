@@ -146,10 +146,20 @@ article{
 section{
     background-color: var(--box-color);
     color: var(--main-text-color);
-    padding: 15px;
+    padding: 20px;
     border-radius: 2px;
     margin: 10px 0px;
     font-family: var(--main-font);
+    display: flex;
+    justify-content: space-between;
+}
+
+.resume{
+    display: block;
+}
+
+.note{
+    display: block;
 }
 
 h3{
@@ -162,6 +172,11 @@ h4{
 
 p{
     font-size: var(--p-size);
+    margin: 0;
+}
+
+.note p{
+    margin: 15px 0;
 }
 
 img{
@@ -306,6 +321,12 @@ a{
 /*main portfolio page*/
 
 
+
+/*programming portfolio page*/
+
+.zen-garden img, .info-website img, .eecu img, .splendor img{
+    width: 49%;
+}
 
 /*personal portfolio page*/
 
