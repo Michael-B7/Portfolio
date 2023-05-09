@@ -1,11 +1,13 @@
 let submenu = document.getElementsByClassName("submenu")[0];
 let pSubmenu = submenu.parentElement;
-
-pSubmenu.addEventListener("mouseover", function(){ 
-    submenu.classList.add("slider")
+let nav = pSubmenu.parentElement;
+console.log(nav)
+pSubmenu.addEventListener("mouseover", function(){
+    submenu.classList.remove("unslider"); 
+    submenu.classList.add("slider");
 })
 
-// pSubmenu.addEventListener("mouseout", function(){
+// nav.addEventListener("mouseout", function(){
 //     submenu.classList.remove("slider")
 // })
 
