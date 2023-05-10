@@ -4,8 +4,11 @@ class PreviewModal{
         console.log(navWidth)
         this.link = link
         this.html = 
-        `<div class="preview-modal" style="position:fixed; z-index:100; width:calc(100vw-${navWidth}); height:90%;">
-            <iframe src="${this.link}" frameborder="8" style="width:100%; height:100%;"></iframe>
+        `<div id="cover" style="position:fixed; z-index:20; background:rgba(0,0,0,.5); width:100%; height:100%;">
+            <i class="fa-solid fa-x"></i>
+            <div class="preview-modal" style="position:fixed; z-index:100; width:90%; height:90%; margin-left:70px;">
+                <iframe src="${this.link}" style="width:100%; height:100%;"></iframe>
+            </div>
         </div>`   
     }
 }
@@ -13,8 +16,9 @@ class PreviewModal{
 let submenu = document.getElementsByClassName("submenu")[0];
 let pSubmenu = submenu.parentElement;
 let nav = pSubmenu.parentElement;
-console.log(nav)
-pSubmenu.addEventListener("mouseover", function(){
+
+pSubmenu.addEventListener("mouseover", function(el){
+    console.log(el.target)
     submenu.classList.remove("unslider"); 
     submenu.classList.add("slider");
 })
@@ -49,7 +53,6 @@ function animateCarousel() {
 }  
 
 if(window.location.pathname === "/portfolio/personal.html"){
-    webPreview("https://mbzg.netlify.app/");
     carousel = document.getElementById("carousel-container");
     carousel.style.width = document.getElementsByClassName("python")[0].width;
 
@@ -57,7 +60,35 @@ if(window.location.pathname === "/portfolio/personal.html"){
 }
 
 function webPreview(link){
+    let nav = document.getElementsByTagName("nav")[0];
+    let links = nav.getElementsByTagName("a");
+    for(let i=0; i<links.length; i++){
+        links[i].style.pointerEvents = "none";
+    }
+
     let modal = new PreviewModal(link);
-    let article = document.getElementsByTagName("body")[0];
-    article.innerHTML += modal.html;
+    let body = document.getElementById("prev-modal");
+    body.style.display = "block";
+    body.style.position = "fixed";
+    body.style.pointerEvents = "none";
+    body.innerHTML += modal.html;
+    let cover = document.getElementById("cover");
+    
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
+    let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    function scroll(){
+        window.scrollTo(scrollLeft, scrollTop);
+    }
+
+    window.addEventListener("scroll", scroll);
+
+    function close(){
+        cover.remove();
+        // body.style.position = "relative";
+        body.style.display = "none";
+        window.removeEventListener("scroll", scroll);
+    }
+
+    cover.addEventListener("click", close)
 }
