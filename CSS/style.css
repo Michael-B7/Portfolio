@@ -384,3 +384,19 @@ a{
     height: 100vh;
     display: none;
 }
+
+
+
+
+
+
+
+
+
+/* media screens */
+
+@media (max-height: 910px){
+    nav > ul > li{
+        margin: 39px 0;
+    }
+}
