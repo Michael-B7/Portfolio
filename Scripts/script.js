@@ -13,6 +13,8 @@ class PreviewModal{
     }
 }
 
+// document.addEventListener("click", function(el){console.log(el.target)});
+
 let submenu = document.getElementsByClassName("submenu")[0];
 let pSubmenu = submenu.parentElement;
 let nav = pSubmenu.parentElement;
@@ -70,7 +72,6 @@ function webPreview(link){
     let body = document.getElementById("prev-modal");
     body.style.display = "block";
     body.style.position = "fixed";
-    body.style.pointerEvents = "none";
     body.innerHTML += modal.html;
     let cover = document.getElementById("cover");
     
