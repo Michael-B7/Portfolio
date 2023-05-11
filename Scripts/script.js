@@ -19,17 +19,20 @@ let submenu = document.getElementsByClassName("submenu")[0];
 let pSubmenu = submenu.parentElement;
 let nav = pSubmenu.parentElement;
 
-pSubmenu.addEventListener("mouseover", function(el){
-    console.log(el.target)
+
+function slide(){
     submenu.classList.remove("unslider"); 
     submenu.classList.add("slider");
-})
+}
 
-submenu.addEventListener("mouseout", function(){
+function unslide(){
     submenu.classList.add("unslider");
     submenu.classList.remove("slider");
-    
-})
+}
+
+pSubmenu.addEventListener("mouseover", slide);
+
+submenu.addEventListener("mouseout", unslide);
 
 function animateCarousel() {
     const container = document.getElementById('image-container');
@@ -74,6 +77,10 @@ function webPreview(link){
     body.style.position = "fixed";
     body.innerHTML += modal.html;
     let cover = document.getElementById("cover");
+
+    pSubmenu.removeEventListener("mouseover", slide);
+
+    submenu.removeEventListener("mouseout", unslide);
     
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
     let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
@@ -89,6 +96,11 @@ function webPreview(link){
         // body.style.position = "relative";
         body.style.display = "none";
         window.removeEventListener("scroll", scroll);
+        pSubmenu.addEventListener("mouseover", slide);
+        submenu.addEventListener("mouseout", unslide);
+        for(let i=0; i<links.length; i++){
+            links[i].style.pointerEvents = "auto";
+        }
     }
 
     cover.addEventListener("click", close)

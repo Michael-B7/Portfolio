@@ -136,8 +136,8 @@ article{
 }
 
 @keyframes bounce{
-    0%, 100%{font-size: large;}
-    50%{font-size: larger;}
+    50%{transform: scale(1.1);}
+    100%{transform: scale(1);}
 }
 
 section{
@@ -329,9 +329,39 @@ a{
 
 /*programming portfolio page*/
 
-.zen-garden img, .info-website img, .eecu img, .splendor img{
+#zen-garden img, #info-website img, #eecu img, #splendor img{
     width: 49%;
+    margin-right: 10px;
+    float:left;
 }
+
+#zen-garden p, #info-website p, #eecu p, #splendor p{
+    display: inline;
+}
+
+/* #zen-garden{
+    background-image: url("../Images/zen-garden.PNG");
+    background-position: top;
+    background-size: cover;
+}
+
+#info-website{
+    background-image: url("../Images/info-website.png");
+    background-position: top;
+    background-size: cover;
+}
+
+#eecu{
+    background-image: url("../Images/eecu.PNG");
+    background-position: top;
+    background-size: cover;
+}
+
+#splendor{
+    background-image: url("../Images/splendor.PNG");
+    background-position: center;
+    background-size: cover;
+} */
 
 /*personal portfolio page*/
 
@@ -385,7 +415,12 @@ a{
     display: none;
 }
 
+/* resume page */
 
+.letter iframe{
+    height: 100vh;
+    border: none;
+}
 
 
 
