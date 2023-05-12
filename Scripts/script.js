@@ -16,11 +16,12 @@ class PreviewModal{
 // document.addEventListener("click", function(el){console.log(el.target)});
 
 let submenu = document.getElementsByClassName("submenu")[0];
-let pSubmenu = submenu.parentElement;
+let pSubmenu = submenu.previousElementSibling;
+console.log(pSubmenu)
 let nav = pSubmenu.parentElement;
 
 
-function slide(){
+function slide(el){
     submenu.classList.remove("unslider"); 
     submenu.classList.add("slider");
 }
@@ -33,6 +34,10 @@ function unslide(){
 pSubmenu.addEventListener("mouseover", slide);
 
 submenu.addEventListener("mouseout", unslide);
+
+submenu.addEventListener("mouseover", slide);
+
+pSubmenu.addEventListener("mouseout", unslide);
 
 function animateCarousel() {
     const container = document.getElementById('image-container');
