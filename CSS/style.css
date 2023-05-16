@@ -78,7 +78,7 @@ nav > ul > li:not(.mail, .linkd){
     position: absolute;
     background: var(--box-color);
     height: fit-content;
-    margin: 100px 0 0 -50px;
+    margin: 100px 0 0 0px;
     transform: rotate(90deg);
     padding: 30px;
     z-index: -5;
@@ -103,7 +103,7 @@ nav a{
     font-size: large;
 }
 
-nav > ul > li a{
+nav > ul > li > a{
     padding: 50px 60px;
 }
 
